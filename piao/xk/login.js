@@ -25,14 +25,14 @@ function getBase64Image(img) {
 
 
 
-    function main() {
-      var img = document.getElementsByTagName('img')[0];
-      console.log(img)
-      img.width = 210;
-      img.height = 100;
-      getBase64Image(img);
-      img.width = 73;
-      img.height = 29;
-    }
+function main() {
+  var img = document.getElementsByTagName('img')[0];
+  console.log(img)
+  img.width = 210;
+  img.height = 100;
+  getBase64Image(img);
+  img.width = 73;
+  img.height = 29;
+}
 
 setTimeout(main,100);

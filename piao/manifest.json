@@ -17,7 +17,7 @@
       ],
       "js": [
         "jquery.js",
-        "xk.js"
+        "xk/xk.js"
       ]
     },
         {
@@ -27,7 +27,7 @@
       ],
       "js": [
       "jquery.js",
-        "login.js"
+        "xk/login.js"
       ]
     },
 
@@ -37,8 +37,8 @@
       ],
       "js": [
       "jquery.js",
-      "ExamResult.js",
-      "start.js"
+      "exam/ExamResult.js",
+      "exam/start.js"
       ]
     }
     
@@ -47,7 +47,8 @@
     "http://121.42.203.161:8000/*"
   ],
   "web_accessible_resources": [
-    "func.js",
-    "ExamResult.js"
+    "xk/func.js",
+    "exam/ExamResult.js",
+    "exam/ExamBtn.js"
   ]
 }
