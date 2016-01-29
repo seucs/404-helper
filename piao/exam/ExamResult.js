@@ -20,14 +20,20 @@ function getScore(){
 	for( var i=1; i<len;i++){
 		if(startBtn==1){
 			m_tr[i].getElementsByTagName("td")[0].innerHTML = 
-		'<input type="button" sel="true" value="已选择" onclick="parent.changeBtn(this)"/>';
+		'<input type="button" sel=true value="已选择" onclick="parent.changeBtn(this)"/>';
 		}
-		if($(":input",m_tr[i].getElementsByTagName("td")[0]).attr('sel')=="false"){
+		var btn = $(":input",m_tr[i].getElementsByTagName("td")[0]);
+
+		if(btn.attr('sel')=="false"){
+			console.log(3213);
 			continue;
 		}
 		var w = parseFloat(m_tr[i].getElementsByTagName("td")[4].innerText);
 		var s = m_tr[i].getElementsByTagName("td")[5].innerText.trim();
 		if(s == "通过" || s == "缺考"){
+			if(startBtn==1){
+				btn.attr({'sel':false,'value':'已忽略',"disabled":true});
+			}
 			continue;
 		}
 		if(s == "优"){
@@ -45,7 +51,6 @@ function getScore(){
 		}
 		sum_s += s;
 		var ws = s;
-		//console.log(s);
 		if(s>=85){
 			s = 4;
 		}else if(s>=75){
@@ -63,7 +68,7 @@ function getScore(){
 		sum_ws += w*ws;
 	}
 	startBtn = 0;
-	var str = "&nbsp;&nbsp;&nbsp;&nbsp;平均绩点:"+res/sum_w+"<br>";
+	var str = "&nbsp;&nbsp;&nbsp;&nbsp;四分制平均绩点:"+res/sum_w+"<br>";
 	str += "&nbsp;&nbsp;&nbsp;&nbsp;加权平均分:"+sum_ws/sum_w+"<br>";
 	str += "&nbsp;&nbsp;&nbsp;&nbsp;算数平均分:"+sum_s/num+"<br>";
 	$("p",parent.frames["packageFrame"].document)[0].innerHTML = str;
