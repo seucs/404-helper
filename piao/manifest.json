@@ -40,7 +40,18 @@
       "exam/ExamResult.js",
       "exam/start.js"
       ]
+    },
+
+        {
+      "matches": [
+        "http://www.360doc.com/content/*"
+      ],
+      "js": [
+      "jquery.js",
+      "360doc/injectCopy.js"
+      ]
     }
+
     
   ],
     "permissions": [
@@ -49,6 +60,7 @@
   "web_accessible_resources": [
     "xk/func.js",
     "exam/ExamResult.js",
-    "exam/ExamBtn.js"
+    "exam/ExamBtn.js",
+    "360doc/copy.js"
   ]
 }
