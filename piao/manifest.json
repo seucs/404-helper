@@ -22,12 +22,23 @@
     },
         {
       "matches": [
-        "http://xk.urp.seu.edu.cn/jw_css/system/showLogin.action",
-        "http://xk.urp.seu.edu.cn/studentService/system/showLogin.action"
+        "http://xk.urp.seu.edu.cn/jw_css/system/*",
+        "http://xk.urp.seu.edu.cn/jw_css/xk/runMainmainSelectClassAction.action"
       ],
       "js": [
       "jquery.js",
-        "xk/login.js"
+        "xk/login.js",
+        "xk/xk.js"
+      ]
+    },
+
+        {
+      "matches": [
+        "http://xk.urp.seu.edu.cn/jw_css/xk/runDxdmainSelectClassAction.action"
+      ],
+      "js": [
+      "jquery.js",
+        "xk/pro_xk.js"
       ]
     },
 
@@ -58,7 +69,9 @@
     "http://121.42.203.161:8000/*"
   ],
   "web_accessible_resources": [
+    "jquery.js",
     "xk/func.js",
+    "xk/profession.js",
     "exam/ExamResult.js",
     "exam/ExamBtn.js",
     "360doc/copy.js"

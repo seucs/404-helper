@@ -10,10 +10,8 @@ $(".button1").each(function() {
     var jhkcdm = clickfunc.split("'")[1];
     var jxbbh = clickfunc.split("'")[3];
     var xkkclx = clickfunc.split("'")[5];
-    console.log(jhkcdm+":"+$("#"+jhkcdm)[0].innerText);
+    //console.log(jhkcdm+":"+$("#"+jhkcdm)[0].innerText);
 });
-
-
 
 
 
@@ -41,16 +39,19 @@ function myselectThis(jhkcdm,jxbbh,xkkclx){
             type:"post", 
             contentType:"application/json", 
             url:"runSelectclassSelectionAction.action?select_jxbbh="+jxbbh+"&select_xkkclx="+xkkclx+"&select_jhkcdm="+jhkcdm, 
+            //url:"runSelectclassSelectionAction.action?select_jxbbh="+jxbbh+"&select_xkkclx="+xkkclx+"&select_jhkcdm="+jhkcdm+"&select_mkbh=" + mkbh+"&dxdbz=1", 
+
+
             data:"{}", 
             dataType:"json", 
             success:function(data){ 
-            	var myDate = new Date();
 				o_obj[jhkcdm].innerText = "正在刷课...目前第"+t_time[jhkcdm]+"次";
             	if(data.rso.isSuccess == 'false'){
 					t_time[jhkcdm] += 1;
             		//console.log(myDate.toLocaleTimeString()+document.getElementById(jhkcdm).innerText +'选课失败');
         			return;
         		}else{
+                    var myDate = new Date();
 					dic[jhkcdm] = "a";
 					window.clearInterval(inn[jhkcdm]);
 					o_obj[jhkcdm].innerText = "服从推荐";
